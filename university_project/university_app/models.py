@@ -16,11 +16,13 @@ class Faculty(models.Model):
 class Department(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+    
+    
 
 class Administration(models.Model):
     name = models.CharField(max_length=255)
     position = models.CharField(max_length=255)
+    contact_email = models.EmailField(default='')
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
 class Professor(models.Model):
